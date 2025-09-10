@@ -1,0 +1,15 @@
+.idea/
+*.log
+*.tmp
+.comands.txt
+env/
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.env
+
+*.sqlite3
+media/
