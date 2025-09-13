@@ -3,16 +3,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
-from musicl.views import TrackViewSet, PlaylistViewSet, RegisterView
+from musicl.views import TrackViewSet, PlaylistViewSet, RegisterView, current_user
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 router = DefaultRouter()
-router.register("tracks", TrackViewSet)
+router.register("tracks", TrackViewSet, basename="track")
 router.register("playlists", PlaylistViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
+    path('api/user/', current_user, name='current-user'),
 
     path("api/register/", RegisterView.as_view(), name="register"),
     path("api/login/", TokenObtainPairView.as_view(), name="token_obtain_pair"),

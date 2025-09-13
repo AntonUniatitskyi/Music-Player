@@ -6,7 +6,13 @@ class TrackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Track
         fields = "__all__"
-        read_only_fields = ('title', 'artist')
+        read_only_fields = ["user"]
+        extra_kwargs = {
+            "title": {"required": False, "allow_blank": True},
+            "artist": {"required": False, "allow_blank": True},
+            "cover_image": {"required": False, "allow_null": True},
+            "audio_file": {"required": True},
+        }
 
 class PlaylistSerializer(serializers.ModelSerializer):
     class Meta:

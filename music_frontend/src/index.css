@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.rhap_container {
+  display: flex;
+  flex-direction: column-reverse; /* прогресс под кнопками */
+  align-items: center; /* по центру */
+}
+
+.rhap_main-controls {
+  order: 2;
+}
+
+.rhap_progress-container {
+  order: 1;
+  width: 90%; /* сделаем прогресс-бар компактнее */
+  margin-top: 0.5rem;
+  height: 4px; /* тонкий бар */
+  border-radius: 2px;
+}
+
+.rhap_play-pause-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
